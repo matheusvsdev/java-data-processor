@@ -4,7 +4,7 @@
 ![Gradle](https://img.shields.io/badge/Gradle-Build-green?style=flat-square&logo=gradle)
 ![Status](https://img.shields.io/badge/Status-Finalizado-brightgreen?style=flat-square)
 
-> Projeto para processamento eficiente de arquivos JSON contendo dados complexos de usuários, times, projetos e logs.
+> Projeto para processamento eficiente de arquivos JSON contendo dados complexos de usuários, times, projetos e logs. Focado em performance, consistência transacional e estrutura de dados relacional.
 
 ---
 
@@ -14,8 +14,8 @@
 - Spring Boot
 - Spring Data JPA
 - Gradle
-- SQLite (para perfil dev)
-- PostgreSQL (para perfil test)
+- SQLite (perfil dev)
+- PostgreSQL (perfil test)
 - Docker para serviço de banco de dados PostgreSQL
 
 ---
@@ -23,12 +23,13 @@
 ## Estrutura do Projeto
 
 ```plaintext
-> controller
-> dto
-> entities
-> mapper
-> repository
-> service
+src/
+├── controller
+├── dto
+├── entities
+├── mapper
+├── repository
+└── service
 ```
 
 ---
@@ -36,11 +37,12 @@
 ## Funcionalidades
 
 - Leitura de arquivos JSON com estrutura aninhada
-- Persistência eficiente com Spring Data JPA
+- Conversão de DTOs em entidades persistentes
 - Associação entre usuários, times, projetos e logs
-- Identificação de líderes de equipe
-- Otimizações com cache e uso de `saveAll()`
-- Tempo de execução rápido mesmo com grandes volumes
+- Identificação automática de líderes de equipe
+- Persistência otimizada com uso de saveAll()
+- Cache interno para evitar duplicações e acelerar o processamento
+- Execução rápida mesmo com grandes volumes de dados
 
 ---
 
